@@ -1,0 +1,12 @@
+name: Ubuntu-latest-with-ubuntu-rolling
+
+on:
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Exec"
+        run: |
+          docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp ghcr.io/sapporo-wes/sapporo-service:1.4.9 docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /tmp:/tmp --entrypoint="" ubuntu:rolling docker run hello-world
