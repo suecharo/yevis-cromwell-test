@@ -1,0 +1,15 @@
+name: Ubuntu-latest
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Exec"
+        run: |
+          docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp ghcr.io/sapporo-wes/sapporo-service:1.4.9 docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /tmp:/tmp --entrypoint="" broadinstitute/cromwell:80 docker run hello-world
