@@ -9,4 +9,4 @@ jobs:
     steps:
       - name: "Exec"
         run: |
-          docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp ghcr.io/sapporo-wes/sapporo-service:1.4.9 docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /tmp:/tmp --entrypoint="" docker pull broadinstitute/cromwell:86-64e3866 docker run hello-world
+          docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /tmp:/tmp ghcr.io/sapporo-wes/sapporo-service:1.4.9 docker run -t --rm -v /var/run/docker.sock:/var/run/docker.sock -v /usr/bin/docker:/usr/bin/docker -v /tmp:/tmp --entrypoint="" broadinstitute/cromwell:86-64e3866 docker run hello-world
